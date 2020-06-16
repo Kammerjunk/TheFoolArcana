@@ -41,7 +41,7 @@ namespace TheFoolArcana
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
-            app.UseAuthentication();
+            //app.UseAuthentication();
 
             if (env.IsDevelopment())
             {
