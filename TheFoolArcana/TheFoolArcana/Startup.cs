@@ -30,7 +30,7 @@ namespace TheFoolArcana
                 options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
