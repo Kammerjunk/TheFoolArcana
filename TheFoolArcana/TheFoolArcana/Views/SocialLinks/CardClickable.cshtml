@@ -1,0 +1,10 @@
+﻿@model SocialLinksCardClickableViewModel
+
+<div class="text-center">
+    <a asp-area="" asp-controller="SocialLinks" asp-action="Details" asp-route-id="@Model.Arcana.Replace(" ", "")">
+        <picture>
+            <img src="~/images/arcana/@(Model.Arcana.Replace(" ", "").ToLower()).png" />
+        </picture>
+    </a>
+    <div>@Model.Arcana</div>
+</div>

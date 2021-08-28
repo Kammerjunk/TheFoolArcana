@@ -32,39 +32,36 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
-                    <picture>
-                        <img src="~/images/title.png" alt="The Fool Chariot" class="bg-info me-2" width="40" height="32" />
-                    </picture>
-                </a>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li>
-                        <a class="nav-link px-2 text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav-link px-2 text-white" asp-area="" asp-controller="Calendar" asp-action="Index">Calendar</a>
-                    </li>
-                    <li>
-                        <a class="nav-link px-2 text-white" asp-area="" asp-controller="SocialLinks" asp-action="Index">Social Links</a>
-                    </li>
-                </ul>
+    <div class="container-fluid py-3 mb-2">
+        <header>
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
+                        <picture>
+                            <img src="~/images/title.png" alt="The Fool Chariot" class="me-2" height="64" />
+                        </picture>
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li>
+                            <a class="nav-link px-2 text-white h4 mb-0" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link px-2 text-white h4 mb-0" asp-area="" asp-controller="Calendar" asp-action="Index">Calendar</a>
+                        </li>
+                        <li>
+                            <a class="nav-link px-2 text-white h4 mb-0" asp-area="" asp-controller="SocialLinks" asp-action="Index">Social Links</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
-    <div class="container">
+        </header>
+    </div>
+    <div class="container py-3">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - TheFoolArcana - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

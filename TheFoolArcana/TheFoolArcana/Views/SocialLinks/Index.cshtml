@@ -1,0 +1,92 @@
+﻿@model SocialLinksIndexViewModel
+
+@{
+    ViewData["Title"] = "Social Links";
+}
+
+<div class="row mb-3">
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Fool"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Magician"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Chariot"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Priestess"))
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Emperor"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Star"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Lovers"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Fortune"))
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Strength"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Sun"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Hanged Man"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Moon"))
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Justice"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Hierophant"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Jester"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Hermit"))
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Death"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Temperance"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Devil"))
+    </div>
+    <div class="col-3">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Tower"))
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-4">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Empress"))
+    </div>
+    <div class="col-4">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Aeon"))
+    </div>
+    <div class="col-4">
+        @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Judgement"))
+    </div>
+</div>
