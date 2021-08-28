@@ -9,10 +9,17 @@ namespace TheFoolArcana.ViewModels
     {
         public string Arcana { get; set; }
         public int? Height { get; set; }
+        public int? Width { get; set; }
 
         public SocialLinksCardClickableViewModel(string arcana)
         {
             Arcana = arcana;
+        }
+
+        public SocialLinksCardClickableViewModel(string arcana, int height, int width) {
+            Arcana = arcana;
+            Height = height;
+            Width = width;
         }
     }
 }

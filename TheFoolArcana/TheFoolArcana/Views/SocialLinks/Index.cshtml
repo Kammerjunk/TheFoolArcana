@@ -4,22 +4,59 @@
     ViewData["Title"] = "Social Links";
 }
 
-<div class="row mb-3">
-    <div class="col-3">
+@{ 
+    var cards = new List<SocialLinksCardClickableViewModel>()
+    {
+        new SocialLinksCardClickableViewModel("Fool"),
+        new SocialLinksCardClickableViewModel("Magician"),
+        new SocialLinksCardClickableViewModel("Chariot"),
+        new SocialLinksCardClickableViewModel("Priestess"),
+        new SocialLinksCardClickableViewModel("Emperor"),
+        new SocialLinksCardClickableViewModel("Star"),
+        new SocialLinksCardClickableViewModel("Lovers"),
+        new SocialLinksCardClickableViewModel("Fortune"),
+        new SocialLinksCardClickableViewModel("Strength"),
+        new SocialLinksCardClickableViewModel("Sun"),
+        new SocialLinksCardClickableViewModel("Hanged Man"),
+        new SocialLinksCardClickableViewModel("Moon"),
+        new SocialLinksCardClickableViewModel("Justice"),
+        new SocialLinksCardClickableViewModel("Hierophant"),
+        new SocialLinksCardClickableViewModel("Jester"),
+        new SocialLinksCardClickableViewModel("Hermit"),
+        new SocialLinksCardClickableViewModel("Death"),
+        new SocialLinksCardClickableViewModel("Temperance"),
+        new SocialLinksCardClickableViewModel("Devil"),
+        new SocialLinksCardClickableViewModel("Tower"),
+        new SocialLinksCardClickableViewModel("Empress"),
+        new SocialLinksCardClickableViewModel("Aeon"),
+        new SocialLinksCardClickableViewModel("Judgement")
+    };
+
+    var rows = new List<List<SocialLinksCardClickableViewModel>>();
+
+    for (int i = 0, L = cards.Count(); i < L; i += Model.MaxCardsPerRow)
+    {
+        rows.Add(cards.GetRange(i, Math.Min(Model.MaxCardsPerRow, cards.Count() - i)));
+    }
+
+    foreach (List<SocialLinksCardClickableViewModel> row in rows)
+    {
+        @await Html.PartialAsync("CardClickableRow", new SocialLinksCardClickableRowViewModel(row))
+    }
+}
+
+
+
+@*<div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between px-5">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Fool"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Magician"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Chariot"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Priestess"))
     </div>
-</div>
+</div>*@
 
-<div class="row mb-3">
+@*<div class="row mb-3">
     <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Emperor"))
     </div>
@@ -50,31 +87,19 @@
 </div>
 
 <div class="row mb-3">
-    <div class="col-3">
+    <div class="col-12 d-flex flex-column justify-content-between">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Justice"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Hierophant"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Jester"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Hermit"))
     </div>
 </div>
 
 <div class="row mb-3">
-    <div class="col-3">
+    <div class="col-12 d-flex flex-column justify-content-between">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Death"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Temperance"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Devil"))
-    </div>
-    <div class="col-3">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Tower"))
     </div>
 </div>
@@ -89,4 +114,4 @@
     <div class="col-4">
         @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel("Judgement"))
     </div>
-</div>
+</div>*@

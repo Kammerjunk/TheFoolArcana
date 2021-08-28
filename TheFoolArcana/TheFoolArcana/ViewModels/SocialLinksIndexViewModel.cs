@@ -7,5 +7,11 @@ namespace TheFoolArcana.ViewModels
 {
     public class SocialLinksIndexViewModel
     {
+        public int MaxCardsPerRow { get; set; }
+
+        public SocialLinksIndexViewModel(int maxCardsPerRow)
+        {
+            MaxCardsPerRow = maxCardsPerRow;
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TheFoolArcana.ViewModels;
 
 namespace TheFoolArcana.Controllers
 {
@@ -10,7 +11,9 @@ namespace TheFoolArcana.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+
+            var vm = new SocialLinksIndexViewModel(5); //TODO config
+            return View(vm);
         }
     }
 }
