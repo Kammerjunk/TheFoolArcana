@@ -11,10 +11,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This page supports both dark and light colour schemes,
+         and switches based on browser setting. Default: dark. -->
+    <meta name="color-scheme" content="dark light" />
+    <script src="~/js/color-mode-switch.js"></script>
+
     <title>
         @Html.Raw(title)
     </title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Load the alternate CSS first
+         (light/original Bootstrap) -->
+    <link rel="stylesheet" href="~/lib/bootstrap-dark-5/dist/css/bootstrap.min.css" media="(prefers-color-scheme: light)" />
+
+    <!-- Then load the primary CSS
+         (dark Bootstrap) -->
+    <link rel="stylesheet" href="~/lib/bootstrap-dark-5/dist/css/bootstrap-night.min.css" media="(prefers-color-scheme: dark)" />
+
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
