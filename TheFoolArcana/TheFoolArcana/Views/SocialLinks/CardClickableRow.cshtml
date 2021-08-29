@@ -4,9 +4,9 @@
 <div class="row mb-3">
     <div class="col d-flex justify-content-between px-5">
         @{
-            foreach (SocialLinksCardClickableViewModel card in Model.Cards)
+            foreach (string arcana in Model.Cards)
             {
-                @await Html.PartialAsync("CardClickable", card)
+                @await Html.PartialAsync("CardClickable", new SocialLinksCardClickableViewModel(arcana))
             }
         }
     </div>

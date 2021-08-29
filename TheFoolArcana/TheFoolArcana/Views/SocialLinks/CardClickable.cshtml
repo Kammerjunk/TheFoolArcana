@@ -1,14 +1,18 @@
 ﻿@model SocialLinksCardClickableViewModel
 
+@{ 
+    string spacelessArcana = Model.Arcana.Replace(" ", "");
+}
+
 <div class="w-auto">
     <div class="text-center">
-        <a asp-area="" asp-controller="SocialLinks" asp-action="Details" asp-route-id="@Model.Arcana.Replace(" ", "")">
+        <a asp-area="" asp-controller="SocialLinks" asp-action="Details" asp-route-id="@spacelessArcana">
             <picture>
                 @{
                     string height = Model.Height == null ? "auto" : Model.Height.ToString();
                     string width = Model.Width == null ? "auto" : Model.Width.ToString();
 
-                    <img src="~/images/arcana/@(Model.Arcana.Replace(" ", "").ToLower()).png" height="@height" width="@width" />
+                    <img src="~/images/arcana/@(spacelessArcana.ToLower()).png" height="@height" width="@width" />
                 }
             </picture>
         </a>

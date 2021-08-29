@@ -4,42 +4,16 @@
     ViewData["Title"] = "Social Links";
 }
 
-@{ 
-    var cards = new List<SocialLinksCardClickableViewModel>()
-    {
-        new SocialLinksCardClickableViewModel("Fool"),
-        new SocialLinksCardClickableViewModel("Magician"),
-        new SocialLinksCardClickableViewModel("Priestess"),
-        new SocialLinksCardClickableViewModel("Empress"),
-        new SocialLinksCardClickableViewModel("Emperor"),
-        new SocialLinksCardClickableViewModel("Hierophant"),
-        new SocialLinksCardClickableViewModel("Lovers"),
-        new SocialLinksCardClickableViewModel("Justice"),
-        new SocialLinksCardClickableViewModel("Chariot"),
-        new SocialLinksCardClickableViewModel("Hermit"),
-        new SocialLinksCardClickableViewModel("Fortune"),
-        new SocialLinksCardClickableViewModel("Strength"),
-        new SocialLinksCardClickableViewModel("Hanged Man"),
-        new SocialLinksCardClickableViewModel("Death"),
-        new SocialLinksCardClickableViewModel("Temperance"),
-        new SocialLinksCardClickableViewModel("Devil"),
-        new SocialLinksCardClickableViewModel("Tower"),
-        new SocialLinksCardClickableViewModel("Star"),
-        new SocialLinksCardClickableViewModel("Moon"),
-        new SocialLinksCardClickableViewModel("Sun"),
-        new SocialLinksCardClickableViewModel("Judgement"),
-        new SocialLinksCardClickableViewModel("Aeon"),
-        new SocialLinksCardClickableViewModel("Jester"),
-    };
+@{
 
-    var rows = new List<List<SocialLinksCardClickableViewModel>>();
+    var rows = new List<List<string>>();
 
-    for (int i = 0, L = cards.Count(); i < L; i += Model.MaxCardsPerRow)
+    for (int i = 0, L = Model.Arcanas.Count(); i < L; i += Model.MaxCardsPerRow)
     {
-        rows.Add(cards.GetRange(i, Math.Min(Model.MaxCardsPerRow, cards.Count() - i)));
+        rows.Add(Model.Arcanas.ToList().GetRange(i, Math.Min(Model.MaxCardsPerRow, Model.Arcanas.Count() - i)));
     }
 
-    foreach (List<SocialLinksCardClickableViewModel> row in rows)
+    foreach (List<string> row in rows)
     {
         @await Html.PartialAsync("CardClickableRow", new SocialLinksCardClickableRowViewModel(row))
     }
